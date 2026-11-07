@@ -1,0 +1,332 @@
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --title: 36px;
+    --title-section: 28px;
+    --main-text: 16px;
+    --header-text: 16px; 
+    --header-a: #ffffff;
+
+    --background-color-header: #1e1b4b;
+    --background-color-footer: #0f172a;
+    --background-color-main: #0b132b;
+    --background-color-block-1: #1c2541;
+    --background-color-block-2: #3a506b;
+    --color-title: #00f5d4;
+    --color-subtitle: #93c5fd;
+    --color-main: #f8fafc;
+    --background-color-button: #3b82f6;
+    --color-button: #ffffff;
+    --hover-color: #60a5fa;
+    --neon-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+}
+
+body {
+    background-color: var(--background-color-main);
+    color: var(--color-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: var(--background-color-header);
+    border-bottom: 2px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 20px;
+}
+
+header a {
+    color: var(--header-a);
+    font-size: var(--header-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header a:hover {
+    color: var(--color-title);
+    text-shadow: var(--neon-shadow);
+}
+
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex-grow: 1;
+}
+
+h2 {
+    font-size: var(--title-section);
+    color: var(--color-subtitle);
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.info {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: var(--background-color-block-1);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #1e293b;
+    margin-bottom: 50px;
+}
+
+.foto-my {
+    flex: 1;
+    max-width: 350px;
+    border-radius: 12px;
+    border: 3px solid var(--background-color-button);
+    box-shadow: var(--neon-shadow);
+    overflow: hidden;
+}
+
+.foto-my img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.description-my {
+    flex: 1.5;
+}
+
+.description-my .title {
+    font-size: var(--title);
+    color: var(--color-title);
+    margin-bottom: 15px;
+    text-shadow: var(--neon-shadow);
+}
+
+.description-my p {
+    font-size: var(--main-text);
+    color: #cbd5e1;
+    text-align: justify;
+}
+
+
+.skills-section {
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #111827, #1e293b);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #334155;
+}
+
+.lists {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.lists ol, .lists ul {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px 40px;
+    border-radius: 12px;
+    min-width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lists li {
+    margin-bottom: 12px;
+    color: #e2e8f0;
+}
+
+.lists li::marker {
+    color: var(--color-title);
+    font-weight: bold;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: var(--background-color-block-1);
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    color: var(--color-title);
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.card-body p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+
+.btn {
+    background-color: var(--background-color-button);
+    color: var(--color-button);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+
+.form-section {
+    background: var(--background-color-block-1);
+    border: 1px solid #1e293b;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.space-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--color-subtitle);
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    background-color: var(--background-color-main);
+    border: 1px solid #334155;
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--color-main);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--color-title);
+    box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
+}
+
+.btn-submit {
+    padding: 14px;
+    font-size: 16px;
+    background: linear-gradient(90deg, #3b82f6, #00f5d4);
+    color: #0b132b;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(90deg, #60a5fa, #57fce7);
+}
+
+
+footer {
+    background-color: var(--background-color-footer);
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    color: #64748b;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+
+@media (max-width: 768px) {
+    .info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .foto-my {
+        max-width: 100%;
+    }
+    
+    .description-my p {
+        text-align: center;
+    }
+    
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
